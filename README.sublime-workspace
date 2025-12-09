@@ -1,0 +1,183 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max_b",
+				"max_bmouth_height"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/brahm/repos/evang_planner/README.md",
+		"/C/Users/brahm/repos/KJV-searcher/requirements.txt",
+		"/C/Users/brahm/OneDrive/Desktop/rafter_calc.py",
+		"/C/Users/brahm/repos/KJV-searcher/Runit/Searches.py",
+		"/C/Users/brahm/repos/KJV-searcher/README.md",
+		"/C/Users/brahm/Downloads/scrape_ohio_festivals.py",
+		"/C/Users/brahm/AppData/Local/Temp/c9f54939-31d5-476a-a20b-f8fbab2df580_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/INSTALL.md",
+		"/C/Users/brahm/AppData/Local/Temp/6e7268a1-0a9f-45d9-8145-8241e59e1ae6_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/INSTALL.md",
+		"/C/Users/brahm/AppData/Local/Temp/a81d14cb-eaeb-447b-9b52-817c33a02fb2_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/INSTALL.md",
+		"/C/Users/brahm/AppData/Local/Temp/6e574ec0-084b-4f27-8a20-1c32b4bb6f80_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/INSTALL.md",
+		"/C/Users/brahm/AppData/Local/Temp/1c0b056c-5ec8-420b-aa4c-d34da0ed3633_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/INSTALL.md",
+		"/C/Users/brahm/AppData/Local/Temp/7f32889f-b24a-437d-8474-72a001ccf25f_ffmpeg-7.1.1.tar.xz.ffmpeg-7.1.1.tar.xz/ffmpeg-7.1.1/README.md",
+		"/C/Users/brahm/repos/KJV-searcher/.gitignore"
+	],
+	"find":
+	{
+		"height": 27.2
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.2
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "README.sublime-project",
+	"replace":
+	{
+		"height": 51.2
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
