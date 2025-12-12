@@ -2,10 +2,48 @@
 
 import requests
 from bs4 import BeautifulSoup
+import re
+
+def extract_dates(date_str):
+    date_raw_components = date_str.split(' ')
+    date_str = date_raw_components[0]
+    date_notes = ' '.join(date_raw_components[1:])
+    went1 = False
+    went2 = False
+    if date_str[-1] in ('–', '-'):
+        date_str = date_str[:-1]
+        went1 = True
+    if date_str[-1] == '*':
+        date_str = date_str[:-1]
+        went2 = True
+    # Pattern matches "MM/DD-MM/DD" or "MM/DD"
+    try:
+        match = re.match(r'^(\d{1,2}/\d{1,2})(?:-(\d{1,2}/\d{1,2}))?$', date_str)
+        if not match:
+            raise ValueError("Input string is not a valid date or date range format")
+    except:
+        print(went1, went2)
+        print("problem:", '||'+date_str+'||')
+        raise
+    first = match.group(1)
+    last = match.group(2) if match.group(2) else first
+    # Find exclusions
+    exclusions = []
+    if "Closed" in date_notes:
+        exclusions = re.findall(r'\b\d{1,2}/\d{1,2}\b', date_notes)
+    return first, last, exclusions
 
 def scrape_ohio_festivals():
     url = "https://ohiofestivals.net/ohio-festivals/"
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/121.0.0.0 Safari/537.36"
+    }
+    response = requests.get(url, headers=headers)
+    # soup = BeautifulSoup(response.text, "html.parser")
+    # print(soup.prettify())
+    # print('...........')
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -91,9 +129,42 @@ def scrape_ohio_festivals():
                     all_contents.append([pre_text, link_href, link_text, post_text])
                     break  # we only want the first a per chunk
 
-    return all_contents
+    # Format output
+    """
+    IN: [date_str, URL, event_name, city] <= poorly formatted strings
+    OUT: {
+        "dates": [list_of_dates], 
+        "URL": URL, 
+        "event": event_name", 
+        "city": city, 
+        #"county": county
+    }
+    """
+    all_events = []
+    for line in all_contents:
+        # Extract raw data
+        date_raw = line[0]
+        URL = line[1]
+        event_name = line[2]
+        city_raw = line[3]
+        # Cleanup city, remove event if discontinued
+        if 'DISCONTINUED' in city_raw:
+            continue
+        city_stripped = ("".join(ch for ch in city_raw if ch.isalpha())).lower()
+        # Convert date
+        first_date, last_date, exclusions = extract_dates(date_raw)
+        all_events.append({
+            "dates": [first_date, last_date, '!', *exclusions],
+            "URL": URL,
+            "event": event_name,
+            "city": city_stripped,
+            #"county": None
+        })
+        print('||'+city_stripped+'||')
+
+    return all_events
 
 if __name__ == "__main__":
     data = scrape_ohio_festivals()
-    for entry in data:
-        print(entry)
+    # for entry in data:
+    #     print(entry)
