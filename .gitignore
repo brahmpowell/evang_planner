@@ -1,1 +1,5 @@
 evang_pyenv*
+
+_DATA_*
+
+__pycache__
