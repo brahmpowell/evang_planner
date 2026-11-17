@@ -1,6 +1,14 @@
 import csv
 import json
 
+
+# Load variables from the .env file
+import os
+from dotenv import load_dotenv
+load_dotenv()
+# Access the variables
+CARTO_API_KEY = os.getenv("CARTO_API_KEY")
+
 def read_json(fpath, default=None, mode='r'):
     try:
         with open(fpath, mode, encoding='utf-8') as jf:

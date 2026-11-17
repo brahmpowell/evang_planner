@@ -7,9 +7,20 @@ import scrape_ohio_festivals as sof
 
 def plot_city_list(ohio_cities, date):
 
+	# Some map configs
+	api_key     = hf.CARTO_API_KEY
+	style       = "light_all"  # Options: 'light_all' (Positron), 'dark_all' (Dark Matter), 'voyager'
+	tile_url    = f"https://basemaps.cartocdn.com/rastertiles/{style}/{{z}}/{{x}}/{{y}}.png?key={api_key}"
+	attribution = '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
+
 	# Center the map on Ohio
 	ohio_center = [40.3675, -82.9962]
-	my_map = folium.Map(location=ohio_center, zoom_start=7)
+	my_map = folium.Map(
+		location=ohio_center, 
+		zoom_start=7,
+		tiles=tile_url,
+		attr=attribution
+	)
 
 	# Get coordinates for each city
 	sidebar_content = ''

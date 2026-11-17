@@ -3,3 +3,5 @@ evang_pyenv*
 _DATA_*
 
 __pycache__
+
+.env
