@@ -110,8 +110,8 @@ def get_city_info():
         city = line[1]
         if (not city) and (not county):
             continue
-        is_big = ('city' in hf.strip_string(line[2])) or (hf.str2int(line[3]) >= 5000)
-        is_done = line[4] != ''
+        is_big = ('city' in hf.strip_string(line[3])) or (hf.str2int(line[4]) >= 5000)
+        is_done = line[5] != ''
         city_mapping[hf.strip_string(city)] = city
         # Check if coords exist
         if county not in cities_coords:
@@ -283,4 +283,4 @@ def scrape_ohio_festivals():
 
 if __name__ == "__main__":
     scrape_ohio_festivals()
-    scrape_ohio_locations()
+    #scrape_ohio_locations()
